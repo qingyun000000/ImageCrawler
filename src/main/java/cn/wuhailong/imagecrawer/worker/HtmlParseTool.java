@@ -43,7 +43,7 @@ public class HtmlParseTool {
             
             //网页链接分析器
             Parser parser = new Parser(url);
-            parser.setEncoding("gb2312");
+            parser.setEncoding("utf-8");
             
             //frame标签超链接
             NodeFilter frameFilter = new NodeFilter(){
@@ -166,7 +166,7 @@ public class HtmlParseTool {
             
             //图片链接分析器
             Parser parser2 = new Parser(url);
-            parser2.setEncoding("gb2312");
+            parser2.setEncoding("utf-8");
             
             //img标签图片链接
             NodeFilter imgFilter = new NodeFilter(){
