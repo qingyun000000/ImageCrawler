@@ -182,6 +182,8 @@ public class HtmlParseTool {
                 Node tag = imageList.elementAt(i);
                 String imgUrl = tag.getText();
                 
+                 System.out.println(imgUrl);
+                
                 //截取头部，先查找data-original=，如果没有再查找src=，没有在查找file=, 都没有跳过
                 int startLength = 0;
                 int start = imgUrl.indexOf("data-original=");
@@ -193,6 +195,10 @@ public class HtmlParseTool {
                 if(start == -1){
                     start = imgUrl.indexOf("file=");
                     startLength = 6;
+                }
+                if(start == -1){
+                    start = imgUrl.indexOf("loadsrc=");
+                    startLength = 9;
                 }
                 if(start == -1){
                     continue;
@@ -253,6 +259,7 @@ public class HtmlParseTool {
                             return false;
                         }
                     }.accept(imageUrl)){
+                   
                     imgLinks.add(imageUrl);
                 }
             }

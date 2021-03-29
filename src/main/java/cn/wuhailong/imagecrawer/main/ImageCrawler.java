@@ -84,7 +84,7 @@ public class ImageCrawler {
         Thread downThread = new Thread(new Runnable() {
             @Override
             public void run() {
-                while(true){
+                while(settings.isStart()){
                     
                     //如果待下载图片地址队列为空，睡0.5s再判断
                     while(LinkQueue.unVisitedImgUrlsEmpty()){
